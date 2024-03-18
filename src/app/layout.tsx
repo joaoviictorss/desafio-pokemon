@@ -1,12 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+import localFont from "next/font/local";
+
+const pokemonFont = localFont({
+  src: [
+    {
+      path: "../../public/fonts/pokemon-gb.ttf",
+      weight: "400",
+    },
+  ],
+  variable: '--pokemon'
+});
 
 export const metadata: Metadata = {
   title: "Desafio Pokemon",
-  description: "Aplicação que mostra quais pokemons teria em determinada cidade.",
+  description:
+    "Aplicação que mostra quais pokemons teria em determinada cidade.",
 };
 
 export default function RootLayout({
@@ -16,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={inter.className}>{children}</body>
+      <body className={pokemonFont.className}>{children}</body>
     </html>
   );
 }
