@@ -1,4 +1,4 @@
-export async function getData(cityName: string) {
+export async function getLocationInfos(cityName: string) {
   const res = await fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=8f04e1b3301b2ca25146fee52f9efbb7`
   );
